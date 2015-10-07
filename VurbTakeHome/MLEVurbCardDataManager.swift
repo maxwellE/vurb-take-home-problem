@@ -6,6 +6,8 @@
 //  Copyright © 2015 MLE. All rights reserved.
 //
 
+import Foundation
+
 class MLEVurbCardDataManager {
     var cardDataStore : Array<CardData> = Array<CardData>()
 	

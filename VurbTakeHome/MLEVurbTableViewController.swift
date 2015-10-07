@@ -52,8 +52,9 @@ class MLEVurbTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        if let cardData = MLEVurbCardDataManager.sharedInstance.cardDataForRow(indexPath.row) {
-            return tableView.dequeueReusableCellWithIdentifier(MLEVurbTableViewController.reuseIdentifier, forIndexPath: indexPath)
-//        }
+        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(MLEVurbTableViewController.reuseIdentifier, forIndexPath: indexPath)
+        let cardData = MLEVurbCardDataManager.sharedInstance.cardDataForRow(indexPath.row)
+        MLEVurbCardViewFactory.sharedInstance.generateCardViewInsideParentView(cardData!, parentView: tableViewCell)
+        return tableViewCell
     }
 }

@@ -6,7 +6,19 @@
 //  Copyright © 2015 MLE. All rights reserved.
 //
 
+// Setup CardType Enum
+
+import Foundation
+
+enum CardType {
+    case Place
+    case Movie
+    case Music
+    case None
+}
+
 class CardData: NSObject {
+    var type : CardType = CardType.None
     var typeString : String = ""
     var title : String = ""
     var imageURLString : String = ""
@@ -16,6 +28,7 @@ class CardData: NSObject {
     convenience init(cardInfo: NSDictionary) {
         self.init()
         typeString = cardInfo["type"] as! String
+        self.determineCardType(typeString)
         title = cardInfo["title"] as! String
         imageURLString = cardInfo["imageURL"] as! String
         for (key, value) in cardInfo {
@@ -23,5 +36,22 @@ class CardData: NSObject {
                 additionalData[key as! String] = (value as! String)
             }
         }
+    }
+    
+    func determineCardType(cardTypeString: String) {
+        switch cardTypeString {
+            case "place":
+                self.type = CardType.Place
+            case "movie":
+                self.type = CardType.Movie
+            case "music":
+                self.type = CardType.Music
+            default:
+                self.type = CardType.None
+        }
+    }
+    
+    func thumbnailImageURLString() -> String {
+        return self.imageURLString
     }
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2015 MLE. All rights reserved.
 //
 
+import AFNetworking
+
 class MLEVurbNetworkingManager {
     let sessionManager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
     let cardDataUrlString : String = "https://gist.githubusercontent.com/helloandrewpark/0a407d7c681b833d6b49/raw/5f3936dd524d32ed03953f616e19740bba920bcd/gistfile1.json"
