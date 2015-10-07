@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD52BDFF22E9D7BBC9D74CF5"
+               BlueprintIdentifier = "82556C1938B30E7F66C87724"
                BuildableName = "libPods-VurbTakeHome.a"
                BlueprintName = "Pods-VurbTakeHome"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77C62CCC76ECC2D23E2FD38A /* libPods-VurbTakeHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960DCBC0BD5FCBE1ABF756FD /* libPods-VurbTakeHome.a */; };
+		B54856D91BC4E1E600AB5450 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54856D81BC4E1E600AB5450 /* CardData.swift */; settings = {ASSET_TAGS = (); }; };
 		B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCA61BC4AEB200AC671A /* AppDelegate.swift */; };
 		B59FFCAC1BC4AEB200AC671A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59FFCAA1BC4AEB200AC671A /* Main.storyboard */; };
 		B59FFCAE1BC4AEB200AC671A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59FFCAD1BC4AEB200AC671A /* Assets.xcassets */; };
@@ -31,6 +32,8 @@
 		2C3C2ACF662DC9BE237EB12F /* Pods-VurbTakeHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VurbTakeHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VurbTakeHome/Pods-VurbTakeHome.debug.xcconfig"; sourceTree = "<group>"; };
 		63CCFAB32157ADF0FF7E9DCD /* Pods-VurbTakeHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VurbTakeHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-VurbTakeHome/Pods-VurbTakeHome.release.xcconfig"; sourceTree = "<group>"; };
 		960DCBC0BD5FCBE1ABF756FD /* libPods-VurbTakeHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VurbTakeHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54856D71BC4D4E200AB5450 /* VurbTakeHome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VurbTakeHome-Bridging-Header.h"; sourceTree = "<group>"; };
+		B54856D81BC4E1E600AB5450 /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		B59FFCA31BC4AEB200AC671A /* VurbTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VurbTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59FFCA61BC4AEB200AC671A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B59FFCAB1BC4AEB200AC671A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				B59FFCAF1BC4AEB200AC671A /* LaunchScreen.storyboard */,
 				B59FFCB21BC4AEB200AC671A /* Info.plist */,
 				B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */,
+				B54856D71BC4D4E200AB5450 /* VurbTakeHome-Bridging-Header.h */,
+				B54856D81BC4E1E600AB5450 /* CardData.swift */,
 			);
 			path = VurbTakeHome;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59FFCC71BC4AF4000AC671A /* MLEVurbTableViewController.swift in Sources */,
+				B54856D91BC4E1E600AB5450 /* CardData.swift in Sources */,
 				B59FFCC91BC4B41700AC671A /* MLEVurbNetworkingManager.swift in Sources */,
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
 			);
@@ -392,6 +398,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MLE.com.VurbTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VurbTakeHome/VurbTakeHome-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -404,6 +411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MLE.com.VurbTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VurbTakeHome/VurbTakeHome-Bridging-Header.h";
 			};
 			name = Release;
 		};
