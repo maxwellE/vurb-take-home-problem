@@ -31,12 +31,14 @@ class MLEVurbTableViewController: UITableViewController {
     // MARK: viewDid* viewWill* methods (View lifecycle)
     
     override func viewDidAppear(animated: Bool) {
+        // Refactor this to store card data in a singleton manager, only do UI Changes in this
+        // callback block
         MLEVurbNetworkingManager.sharedInstance.getCardData({ (responseDictionary) -> Void in
             let cardsData = responseDictionary["cards"] as! NSArray
             for rawCardData in cardsData {
                 let cardInfo = rawCardData as! NSDictionary
                 let cardData = CardData.init(cardInfo: cardInfo)
-                print(cardData)
+                print(cardData.title)
             }
             }) { (error) -> Void in
                 
