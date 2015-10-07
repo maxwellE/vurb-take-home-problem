@@ -21,6 +21,8 @@ class MLEVurbCardViewFactory {
         switch cardData.type {
         case .Movie:
             return MLEVurbMovieCardView(cardData: cardData)
+        case .Music:
+            return MLEVurbMusicCardView(cardData: cardData)
         default:
             return MLEVurbCardView(cardData: cardData)
         }

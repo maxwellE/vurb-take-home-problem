@@ -46,11 +46,31 @@ class MLEVurbCardView: UIView {
     
     func setupCardView() {
         self.setupThumbnailImageView()
-        self.setupTitle()
+        self.setupTitleLabel()
     }
     
     // MARK: View setup helpers
-
+    
+    // MARK: Title View Logic
+    
+    func setupTitleLabel() {
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = self.cardData!.title
+        self.addSubview(titleLabel)
+        self.titleView = titleLabel
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self.thumbnailImageView!, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 20))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: self.titleLabelRightOffset()))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+    }
+    
+    // This method can be overriden to provide a custom right label offset value
+    func titleLabelRightOffset() -> CGFloat {
+        return 0
+    }
+    
+    // MARK: Thumbnail ImageView Logic
+    
     func setupThumbnailImageView() {
         let thumbnailImageView = UIImageView()
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,17 +84,6 @@ class MLEVurbCardView: UIView {
         self.thumbnailImageView = thumbnailImageView
     }
     
-    func setupTitle() {
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = self.cardData!.title
-        self.addSubview(titleLabel)
-        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self.thumbnailImageView!, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 20))
-        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
-    }
-    
-    // MARK: Thumbnail ImageView Logic
     
     // This method can be overriden
     func thumbnailImageURL() -> NSURL {

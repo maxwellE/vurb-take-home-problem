@@ -23,6 +23,8 @@
 		B5ACA6D51BC5A4B7008EA328 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6D91BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6DB1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */; settings = {ASSET_TAGS = (); }; };
+		B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */; settings = {ASSET_TAGS = (); }; };
+		B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardContainerViewProtocol.swift; sourceTree = "<group>"; };
 		B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbMovieCardView.swift; sourceTree = "<group>"; };
+		B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbMusicCardView.swift; sourceTree = "<group>"; };
+		B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbOpenMusicVideoButton.swift; sourceTree = "<group>"; };
 		D1813F12D2C0161F2722A3F3 /* Pods_VurbTakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VurbTakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,8 @@
 				B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */,
 				B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */,
 				B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */,
+				B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */,
+				B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */,
 			);
 			path = VurbTakeHome;
 			sourceTree = "<group>";
@@ -310,7 +316,9 @@
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
 				B5ACA6D91BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift in Sources */,
 				B5ACA6CD1BC58434008EA328 /* MLEVurbCardDataManager.swift in Sources */,
+				B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */,
 				B5ACA6D11BC599A2008EA328 /* MLEVurbCardViewFactory.swift in Sources */,
+				B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
