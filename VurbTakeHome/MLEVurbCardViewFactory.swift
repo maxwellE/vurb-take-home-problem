@@ -18,7 +18,11 @@ class MLEVurbCardViewFactory {
     }
 	
     func generateCardView(cardData: CardData) -> MLEVurbCardView {
-        let cardView = MLEVurbCardView(cardData: cardData)
-        return cardView
+        switch cardData.type {
+        case .Movie:
+            return MLEVurbMovieCardView(cardData: cardData)
+        default:
+            return MLEVurbCardView(cardData: cardData)
+        }
     }
 }

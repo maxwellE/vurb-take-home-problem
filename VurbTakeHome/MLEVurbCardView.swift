@@ -74,12 +74,20 @@ class MLEVurbCardView: UIView {
         self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
     }
     
+    // MARK: Thumbnail ImageView Logic
+    
+    // This method can be overriden
+    func thumbnailImageURL() -> NSURL {
+        return NSURL(string: self.cardData!.thumbnailImageURLString)!
+    }
+    
     func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
-        thumbnailImageView.sd_setImageWithURL(NSURL(string: self.cardData!.thumbnailImageURLString())!) { [weak self] (downloadedImage, error, imageCacheType, imageURL) -> Void in
+        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL()) { [weak self] (downloadedImage, error, imageCacheType, imageURL) -> Void in
             self?.thumbnailImageDidCompleteDownload(downloadedImage, error: error, imageCacheType: imageCacheType, imageURL: imageURL)
         }
     }
     
+    // This method can be overriden
     func thumbnailImageDidCompleteDownload(downloadedImage: UIImage?, error: NSError?, imageCacheType: SDImageCacheType, imageURL: NSURL) {
         // This base class does nothing for this method
     }

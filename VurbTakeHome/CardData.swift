@@ -21,7 +21,7 @@ class CardData: NSObject {
     var type : CardType = CardType.None
     var typeString : String = ""
     var title : String = ""
-    var imageURLString : String = ""
+    var thumbnailImageURLString : String = ""
     var additionalData : Dictionary<String, String> = Dictionary<String, String>()
     let mandatoryCardInfoKeys = ["type", "title", "imageURL"]
     
@@ -30,7 +30,7 @@ class CardData: NSObject {
         typeString = cardInfo["type"] as! String
         self.determineCardType(typeString)
         title = cardInfo["title"] as! String
-        imageURLString = cardInfo["imageURL"] as! String
+        thumbnailImageURLString = cardInfo["imageURL"] as! String
         for (key, value) in cardInfo {
             if (!self.mandatoryCardInfoKeys.contains(key as! String)) {
                 additionalData[key as! String] = (value as! String)
@@ -49,9 +49,5 @@ class CardData: NSObject {
             default:
                 self.type = CardType.None
         }
-    }
-    
-    func thumbnailImageURLString() -> String {
-        return self.imageURLString
     }
 }
