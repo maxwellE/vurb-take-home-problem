@@ -17,17 +17,13 @@ class MLEVurbNetworkingManager {
         return Singleton.instance
     }
     
-    func getCardData(successBlock: (responseDictionary: NSDictionary) -> Void, failureBlock: (error: NSError?) -> Void) {
+    func getCardData(successBlock: () -> Void, failureBlock: (error: NSError?) -> Void) {
         let responseSerializer = AFHTTPResponseSerializer()
         responseSerializer.acceptableContentTypes = Set.init(arrayLiteral: "text/plain")
         self.sessionManager.responseSerializer = responseSerializer
         self.sessionManager.GET(cardDataUrlString, parameters: nil, success: { (operation, responseData) -> Void in
-            do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(responseData as! NSData, options: NSJSONReadingOptions.AllowFragments)
-                successBlock(responseDictionary: jsonData as! NSDictionary)
-            } catch {
-                failureBlock(error: nil)
-            }
+                MLEVurbCardDataManager.sharedInstance.loadCardDataFromResponseData(responseData as! NSData)
+                successBlock()
             }) { (operation, error) -> Void in
                 failureBlock(error: error)
         }

@@ -16,6 +16,8 @@
 		B59FFCBC1BC4AEB200AC671A /* VurbTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCBB1BC4AEB200AC671A /* VurbTakeHomeUITests.swift */; };
 		B59FFCC71BC4AF4000AC671A /* MLEVurbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B59FFCC91BC4B41700AC671A /* MLEVurbNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCC81BC4B41700AC671A /* MLEVurbNetworkingManager.swift */; settings = {ASSET_TAGS = (); }; };
+		B5ACA6CD1BC58434008EA328 /* MLEVurbCardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		B5ACA6CF1BC589A5008EA328 /* MLEVurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		B59FFCBD1BC4AEB200AC671A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbTableViewController.swift; sourceTree = "<group>"; };
 		B59FFCC81BC4B41700AC671A /* MLEVurbNetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbNetworkingManager.swift; sourceTree = "<group>"; };
+		B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardDataManager.swift; sourceTree = "<group>"; };
+		B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */,
 				B54856D71BC4D4E200AB5450 /* VurbTakeHome-Bridging-Header.h */,
 				B54856D81BC4E1E600AB5450 /* CardData.swift */,
+				B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */,
+				B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */,
 			);
 			path = VurbTakeHome;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 				B59FFCC71BC4AF4000AC671A /* MLEVurbTableViewController.swift in Sources */,
 				B54856D91BC4E1E600AB5450 /* CardData.swift in Sources */,
 				B59FFCC91BC4B41700AC671A /* MLEVurbNetworkingManager.swift in Sources */,
+				B5ACA6CF1BC589A5008EA328 /* MLEVurbTableViewCell.swift in Sources */,
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
+				B5ACA6CD1BC58434008EA328 /* MLEVurbCardDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

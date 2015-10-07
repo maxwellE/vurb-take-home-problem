@@ -9,13 +9,13 @@
 import UIKit
 
 class MLEVurbTableViewController: UITableViewController {
-    let reuseIdentifier = "CardCell"
+    static let reuseIdentifier = "CardCell"
     var cardDataArray : Array<String> = Array<String>()
     
     // MARK: Initializers
     
     func commonInit() {
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: reuseIdentifier)
+        self.tableView.registerClass(MLEVurbTableViewCell.classForCoder(), forCellReuseIdentifier: MLEVurbTableViewController.reuseIdentifier)
     }
     
     init() {
@@ -33,15 +33,11 @@ class MLEVurbTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         // Refactor this to store card data in a singleton manager, only do UI Changes in this
         // callback block
-        MLEVurbNetworkingManager.sharedInstance.getCardData({ (responseDictionary) -> Void in
-            let cardsData = responseDictionary["cards"] as! NSArray
-            for rawCardData in cardsData {
-                let cardInfo = rawCardData as! NSDictionary
-                let cardData = CardData.init(cardInfo: cardInfo)
-                print(cardData.title)
-            }
+        MLEVurbNetworkingManager.sharedInstance.getCardData({ [weak self] () -> Void in
+            print(MLEVurbCardDataManager.sharedInstance.numberOfCards())
+            self?.tableView.reloadData()
             }) { (error) -> Void in
-                
+            // Handle errors!
         }
     }
     
@@ -52,10 +48,12 @@ class MLEVurbTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return MLEVurbCardDataManager.sharedInstance.numberOfCards()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+//        if let cardData = MLEVurbCardDataManager.sharedInstance.cardDataForRow(indexPath.row) {
+            return tableView.dequeueReusableCellWithIdentifier(MLEVurbTableViewController.reuseIdentifier, forIndexPath: indexPath)
+//        }
     }
 }
