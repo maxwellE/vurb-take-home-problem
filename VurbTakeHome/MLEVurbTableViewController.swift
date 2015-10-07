@@ -50,11 +50,11 @@ class MLEVurbTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MLEVurbCardDataManager.sharedInstance.numberOfCards()
     }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(MLEVurbTableViewController.reuseIdentifier, forIndexPath: indexPath)
+        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(MLEVurbTableViewController.reuseIdentifier, forIndexPath: indexPath) as! MLEVurbTableViewCell
         let cardData = MLEVurbCardDataManager.sharedInstance.cardDataForRow(indexPath.row)
-        MLEVurbCardViewFactory.sharedInstance.generateCardViewInsideParentView(cardData!, parentView: tableViewCell)
+        tableViewCell.addCardView(MLEVurbCardViewFactory.sharedInstance.generateCardView(cardData!))
         return tableViewCell
     }
 }

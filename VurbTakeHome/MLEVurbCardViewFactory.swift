@@ -17,13 +17,8 @@ class MLEVurbCardViewFactory {
         return Singleton.instance
     }
 	
-    func generateCardViewInsideParentView(cardData: CardData, parentView: UIView) {
+    func generateCardView(cardData: CardData) -> MLEVurbCardView {
         let cardView = MLEVurbCardView(cardData: cardData)
-        parentView.addSubview(cardView)
-        cardView.setupCardView()
-        parentView.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: parentView, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
-        parentView.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: parentView, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
-        parentView.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: parentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        parentView.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: parentView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        return cardView
     }
 }

@@ -65,7 +65,13 @@ class MLEVurbCardView: UIView {
     }
     
     func setupTitle() {
-        
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = self.cardData!.title
+        self.addSubview(titleLabel)
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self.thumbnailImageView!, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 20))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
     }
     
     func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
