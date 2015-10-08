@@ -34,7 +34,6 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
             }
             if let thumbnailImage = downloadedImage {
                 if let thumbnailImageView = self?.thumbnailImageView {
-                   thumbnailImageView.layoutIfNeeded()
                     self?.cardData!.croppedImage = Toucan(image: thumbnailImage).resize(thumbnailImageView.bounds.size, fitMode: Toucan.Resize.FitMode.Crop).image
 
                 }

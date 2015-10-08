@@ -53,6 +53,12 @@ class MLEVurbCardView: UIView {
         self.setupTitleLabel()
     }
     
+    override func layoutSubviews() {
+        if let thumbnailImageView = self.thumbnailImageView {
+            self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
+        }
+    }
+    
     func viewBackgroundColor() -> UIColor {
         return UIColor.whiteColor()
     }
@@ -88,7 +94,6 @@ class MLEVurbCardView: UIView {
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
         self.thumbnailImageView = thumbnailImageView
-        self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
     }
     
     
