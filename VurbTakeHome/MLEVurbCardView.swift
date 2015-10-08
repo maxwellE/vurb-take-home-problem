@@ -53,6 +53,12 @@ class MLEVurbCardView: UIView {
         self.setupTitleLabel()
     }
     
+    override func layoutSubviews() {
+        if let thumbnailImageView = self.thumbnailImageView {
+            self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
+        }
+    }
+    
     func viewBackgroundColor() -> UIColor {
         return UIColor.whiteColor()
     }
@@ -88,7 +94,6 @@ class MLEVurbCardView: UIView {
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
         self.thumbnailImageView = thumbnailImageView
-        self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
     }
     
     
@@ -98,13 +103,6 @@ class MLEVurbCardView: UIView {
     }
     
     func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
-        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL()) { [weak self] (downloadedImage, error, imageCacheType, imageURL) -> Void in
-            self?.thumbnailImageDidCompleteDownload(downloadedImage, error: error, imageCacheType: imageCacheType, imageURL: imageURL)
-        }
-    }
-    
-    // This method can be overriden
-    func thumbnailImageDidCompleteDownload(downloadedImage: UIImage?, error: NSError?, imageCacheType: SDImageCacheType, imageURL: NSURL) {
-        // This base class does nothing for this method
+        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL())
     }
 }

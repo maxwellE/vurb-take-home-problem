@@ -26,6 +26,7 @@ class CardData: NSObject {
     var additionalData : Dictionary<String, String> = Dictionary<String, String>()
     let mandatoryCardInfoKeys = ["type", "title", "imageURL"]
     var croppedImage : UIImage?
+    var imageToBeCropped : UIImage?
     var averageImageColor : UIColor?
     
     convenience init(cardInfo: NSDictionary) {

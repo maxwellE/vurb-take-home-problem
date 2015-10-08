@@ -18,13 +18,24 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
         return UIColor.whiteColor()
     }
     
-    override func thumbnailImageDidCompleteDownload(downloadedImage: UIImage?, error: NSError?, imageCacheType: SDImageCacheType, imageURL: NSURL) {
+    override func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
         let operationQueue = NSOperationQueue()
+        let downloadImageOperation = NSBlockOperation { [weak self] () -> Void in
+            if let _ = self?.cardData?.croppedImage {
+                return
+            }
+            if let _ = self?.cardData?.imageToBeCropped {
+                return
+            }
+            if let imageData = NSData(contentsOfURL: (self?.thumbnailImageURL())!) {
+                self?.cardData?.imageToBeCropped = UIImage(data: imageData)
+            }
+        }
         let averageImageColorOperation = NSBlockOperation { [weak self] () -> Void in
             if let _ = self?.cardData?.averageImageColor {
                 return
             }
-            if let thumbnailImage = downloadedImage {
+            if let thumbnailImage = self?.cardData?.imageToBeCropped {
                 self?.cardData?.averageImageColor = thumbnailImage.averageColor()
             }
         }
@@ -32,29 +43,31 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
             if let _ = self?.cardData!.croppedImage {
                 return
             }
-            if let thumbnailImage = downloadedImage {
+            if let thumbnailImage = self?.cardData?.imageToBeCropped {
                 if let thumbnailImageView = self?.thumbnailImageView {
-                   thumbnailImageView.layoutIfNeeded()
                     self?.cardData!.croppedImage = Toucan(image: thumbnailImage).resize(thumbnailImageView.bounds.size, fitMode: Toucan.Resize.FitMode.Crop).image
-
+                    
                 }
             }
         }
         let completionOperation = NSBlockOperation { [weak self] () -> Void in
+            self?.cardData?.imageToBeCropped = nil
             self?.imageOperationsCompleteBlock()
         }
+        averageImageColorOperation.addDependency(downloadImageOperation)
+        cropOperation.addDependency(downloadImageOperation)
         completionOperation.addDependency(averageImageColorOperation)
         completionOperation.addDependency(cropOperation)
-        operationQueue.addOperations([averageImageColorOperation, cropOperation, completionOperation], waitUntilFinished: false)
+        operationQueue.addOperations([downloadImageOperation, averageImageColorOperation, cropOperation, completionOperation], waitUntilFinished: false)
     }
     
     func imageOperationsCompleteBlock() {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            if let averageColorBackgroundColor = self.cardData?.averageImageColor {
-                if let croppedImage = self.cardData?.croppedImage {
-                    self.backgroundColor = averageColorBackgroundColor
-                    self.thumbnailImageView?.contentMode = UIViewContentMode.Center
-                    self.thumbnailImageView?.image = croppedImage
+        dispatch_async(dispatch_get_main_queue(), { [weak self] () -> Void in
+            if let averageColorBackgroundColor = self?.cardData?.averageImageColor {
+                if let croppedImage = self?.cardData?.croppedImage {
+                    self?.backgroundColor = averageColorBackgroundColor
+                    self?.thumbnailImageView?.contentMode = UIViewContentMode.Center
+                    self?.thumbnailImageView?.image = croppedImage
                 }
             }
         })

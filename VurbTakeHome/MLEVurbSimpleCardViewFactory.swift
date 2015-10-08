@@ -1,22 +1,14 @@
 //
-//  MLEVurbCardViewFactory.swift
+//  MLEVurbSimpleCardViewFactory.swift
 //  VurbTakeHome
 //
-//  Created by Maxwell Elliott on 10/7/15.
+//  Created by Maxwell Elliott on 10/8/15.
 //  Copyright © 2015 MLE. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class MLEVurbCardViewFactory {
-	
-    class var sharedInstance: MLEVurbCardViewFactory {
-        struct Singleton {
-            static let instance = MLEVurbCardViewFactory()
-        }
-        return Singleton.instance
-    }
-	
+class MLEVurbSimpleCardViewFactory: MLEVurbCardViewFactoryProtocol {
     func generateCardView(cardData: CardData) -> MLEVurbCardView {
         switch cardData.type {
         case .Movie:

@@ -1,25 +1,18 @@
 //
-//  MLEVurbCardDataManager.swift
+//  MLEVurbSimpleCardDataManager.swift
 //  VurbTakeHome
 //
-//  Created by Maxwell Elliott on 10/7/15.
+//  Created by Maxwell Elliott on 10/8/15.
 //  Copyright © 2015 MLE. All rights reserved.
 //
 
 import Foundation
 
-class MLEVurbCardDataManager {
+class MLEVurbSimpleCardDataManager: MLEVurbCardDataProtocol {
     var cardDataStore : Array<CardData> = Array<CardData>()
-	
-    class var sharedInstance: MLEVurbCardDataManager {
-        struct Singleton {
-            static let instance = MLEVurbCardDataManager()
-        }
-        return Singleton.instance
-    }
     
-    func loadCardDataFromResponseData(responseData : NSData) {
-        self.cardDataStore = Array<CardData>()
+    func loadCardDataFromResponseData(responseData: NSData) {
+        self.cardDataStore.removeAll()
         do {
             let responseDictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
             let cardsData = responseDictionary["cards"] as! NSArray
@@ -37,7 +30,7 @@ class MLEVurbCardDataManager {
     func numberOfCards() -> Int {
         return cardDataStore.count
     }
-	
+    
     func cardDataForRow(row: Int) -> CardData? {
         return cardDataStore[row]
     }
