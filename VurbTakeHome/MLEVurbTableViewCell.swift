@@ -12,6 +12,7 @@ class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
     weak var cardView : MLEVurbCardView?
     
     func commonInit() {
+        self.backgroundColor = UIColor(red:0.39, green:0.46, blue:0.86, alpha:1)
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -38,8 +39,8 @@ class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
     func addCardView(cardView: MLEVurbCardView) {
         self.addSubview(cardView)
         self.cardView = cardView
-        self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0.95, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0.8, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: cardView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         cardView.setupCardView()

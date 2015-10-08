@@ -24,6 +24,9 @@ class MLEVurbCardView: UIView {
     
     func commonInit() {
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowOffset = CGSizeMake(5,5)
+        self.layer.shadowOpacity = 0.5
     }
     
     init() {

@@ -16,6 +16,9 @@ class MLEVurbTableViewController: UITableViewController {
     
     func commonInit() {
         self.tableView.registerClass(MLEVurbTableViewCell.classForCoder(), forCellReuseIdentifier: MLEVurbTableViewController.reuseIdentifier)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.backgroundColor = UIColor(red:0.39, green:0.46, blue:0.86, alpha:1)
+        self.tableView.allowsSelection = false
     }
     
     init() {
@@ -58,6 +61,6 @@ class MLEVurbTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70.0
+        return 140.0
     }
 }
