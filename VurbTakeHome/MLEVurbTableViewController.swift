@@ -34,7 +34,6 @@ class MLEVurbTableViewController: UITableViewController {
         // Refactor this to store card data in a singleton manager, only do UI Changes in this
         // callback block
         MLEVurbNetworkingManager.sharedInstance.getCardData({ [weak self] () -> Void in
-            print(MLEVurbCardDataManager.sharedInstance.numberOfCards())
             self?.tableView.reloadData()
             }) { (error) -> Void in
             // Handle errors!
@@ -56,5 +55,9 @@ class MLEVurbTableViewController: UITableViewController {
         let cardData = MLEVurbCardDataManager.sharedInstance.cardDataForRow(indexPath.row)
         tableViewCell.addCardView(MLEVurbCardViewFactory.sharedInstance.generateCardView(cardData!))
         return tableViewCell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70.0
     }
 }

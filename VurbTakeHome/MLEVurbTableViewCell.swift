@@ -33,7 +33,7 @@ class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
         
     }
     
-    // MLEVurbCardContainerViewProtocol methods
+    // MARK: MLEVurbCardContainerViewProtocol methods
     
     func addCardView(cardView: MLEVurbCardView) {
         self.addSubview(cardView)

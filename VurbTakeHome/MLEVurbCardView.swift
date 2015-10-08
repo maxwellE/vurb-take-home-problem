@@ -79,13 +79,13 @@ class MLEVurbCardView: UIView {
     func setupThumbnailImageView() {
         let thumbnailImageView = UIImageView()
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
         self.addSubview(thumbnailImageView)
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
         self.thumbnailImageView = thumbnailImageView
+        self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
     }
     
     

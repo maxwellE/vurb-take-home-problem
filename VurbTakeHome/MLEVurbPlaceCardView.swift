@@ -33,7 +33,11 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
                 return
             }
             if let thumbnailImage = downloadedImage {
-                self?.cardData!.croppedImage = Toucan(image: thumbnailImage).resize(thumbnailImage.size, fitMode: Toucan.Resize.FitMode.Crop).image
+                if let thumbnailImageView = self?.thumbnailImageView {
+                   thumbnailImageView.layoutIfNeeded()
+                    self?.cardData!.croppedImage = Toucan(image: thumbnailImage).resize(thumbnailImageView.bounds.size, fitMode: Toucan.Resize.FitMode.Crop).image
+
+                }
             }
         }
         let completionOperation = NSBlockOperation { [weak self] () -> Void in
@@ -48,12 +52,9 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             if let averageColorBackgroundColor = self.cardData?.averageImageColor {
                 if let croppedImage = self.cardData?.croppedImage {
-                    if self.backgroundColor != averageColorBackgroundColor {
-                        self.backgroundColor = averageColorBackgroundColor
-                    }
-                    if self.thumbnailImageView?.image != averageColorBackgroundColor {
-                        self.thumbnailImageView?.image = croppedImage
-                    }
+                    self.backgroundColor = averageColorBackgroundColor
+                    self.thumbnailImageView?.contentMode = UIViewContentMode.Center
+                    self.thumbnailImageView?.image = croppedImage
                 }
             }
         })
