@@ -9,6 +9,7 @@
 // Setup CardType Enum
 
 import Foundation
+import UIKit
 
 enum CardType {
     case Place
@@ -24,6 +25,8 @@ class CardData: NSObject {
     var thumbnailImageURLString : String = ""
     var additionalData : Dictionary<String, String> = Dictionary<String, String>()
     let mandatoryCardInfoKeys = ["type", "title", "imageURL"]
+    var croppedImage : UIImage?
+    var averageImageColor : UIColor?
     
     convenience init(cardInfo: NSDictionary) {
         self.init()

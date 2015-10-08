@@ -12,7 +12,6 @@ class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
     weak var cardView : MLEVurbCardView?
     
     func commonInit() {
-        self.backgroundColor = UIColor.redColor()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

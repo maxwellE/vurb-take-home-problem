@@ -23,6 +23,8 @@ class MLEVurbCardViewFactory {
             return MLEVurbMovieCardView(cardData: cardData)
         case .Music:
             return MLEVurbMusicCardView(cardData: cardData)
+        case .Place:
+            return MLEVurbPlaceCardView(cardData: cardData)
         default:
             return MLEVurbCardView(cardData: cardData)
         }

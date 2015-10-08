@@ -45,8 +45,13 @@ class MLEVurbCardView: UIView {
     // MARK: View Management
     
     func setupCardView() {
+        self.backgroundColor = self.viewBackgroundColor()
         self.setupThumbnailImageView()
         self.setupTitleLabel()
+    }
+    
+    func viewBackgroundColor() -> UIColor {
+        return UIColor.whiteColor()
     }
     
     // MARK: View setup helpers
@@ -74,7 +79,6 @@ class MLEVurbCardView: UIView {
     func setupThumbnailImageView() {
         let thumbnailImageView = UIImageView()
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
-        thumbnailImageView.backgroundColor = UIColor.blueColor()
         self.setupThumbnailImageViewImageDownloader(thumbnailImageView)
         self.addSubview(thumbnailImageView)
         self.addConstraint(NSLayoutConstraint(item: thumbnailImageView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
