@@ -14,6 +14,7 @@ class MLEVurbOpenMusicVideoButton: UIButton {
     func commonInit() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setTitle("Play", forState: UIControlState.Normal)
+        self.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
     init() {
