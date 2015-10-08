@@ -103,13 +103,6 @@ class MLEVurbCardView: UIView {
     }
     
     func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
-        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL()) { [weak self] (downloadedImage, error, imageCacheType, imageURL) -> Void in
-            self?.thumbnailImageDidCompleteDownload(downloadedImage, error: error, imageCacheType: imageCacheType, imageURL: imageURL)
-        }
-    }
-    
-    // This method can be overriden
-    func thumbnailImageDidCompleteDownload(downloadedImage: UIImage?, error: NSError?, imageCacheType: SDImageCacheType, imageURL: NSURL) {
-        // This base class does nothing for this method
+        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL())
     }
 }
