@@ -15,10 +15,7 @@
 		B59FFCB11BC4AEB200AC671A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59FFCAF1BC4AEB200AC671A /* LaunchScreen.storyboard */; };
 		B59FFCBC1BC4AEB200AC671A /* VurbTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCBB1BC4AEB200AC671A /* VurbTakeHomeUITests.swift */; };
 		B59FFCC71BC4AF4000AC671A /* MLEVurbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B59FFCC91BC4B41700AC671A /* MLEVurbNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCC81BC4B41700AC671A /* MLEVurbNetworkingManager.swift */; settings = {ASSET_TAGS = (); }; };
-		B5ACA6CD1BC58434008EA328 /* MLEVurbCardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6CF1BC589A5008EA328 /* MLEVurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		B5ACA6D11BC599A2008EA328 /* MLEVurbCardViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6D01BC599A2008EA328 /* MLEVurbCardViewFactory.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6D31BC599D4008EA328 /* MLEVurbCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6D51BC5A4B7008EA328 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6D91BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,10 +58,7 @@
 		B59FFCBB1BC4AEB200AC671A /* VurbTakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VurbTakeHomeUITests.swift; sourceTree = "<group>"; };
 		B59FFCBD1BC4AEB200AC671A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbTableViewController.swift; sourceTree = "<group>"; };
-		B59FFCC81BC4B41700AC671A /* MLEVurbNetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbNetworkingManager.swift; sourceTree = "<group>"; };
-		B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardDataManager.swift; sourceTree = "<group>"; };
 		B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbTableViewCell.swift; sourceTree = "<group>"; };
-		B5ACA6D01BC599A2008EA328 /* MLEVurbCardViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardViewFactory.swift; sourceTree = "<group>"; };
 		B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardView.swift; sourceTree = "<group>"; };
 		B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardContainerViewProtocol.swift; sourceTree = "<group>"; };
@@ -147,31 +141,19 @@
 			isa = PBXGroup;
 			children = (
 				B59FFCA61BC4AEB200AC671A /* AppDelegate.swift */,
-				B59FFCC81BC4B41700AC671A /* MLEVurbNetworkingManager.swift */,
 				B59FFCAA1BC4AEB200AC671A /* Main.storyboard */,
 				B59FFCAD1BC4AEB200AC671A /* Assets.xcassets */,
 				B59FFCAF1BC4AEB200AC671A /* LaunchScreen.storyboard */,
 				B59FFCB21BC4AEB200AC671A /* Info.plist */,
-				B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */,
+				B5AD179E1BC72BE300C8B2C3 /* TableView */,
 				B54856D71BC4D4E200AB5450 /* VurbTakeHome-Bridging-Header.h */,
-				B54856D81BC4E1E600AB5450 /* CardData.swift */,
-				B5ACA6CC1BC58434008EA328 /* MLEVurbCardDataManager.swift */,
-				B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */,
-				B5ACA6D01BC599A2008EA328 /* MLEVurbCardViewFactory.swift */,
-				B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */,
-				B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */,
-				B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */,
-				B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */,
-				B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */,
-				B5ACA6E01BC5C56A008EA328 /* MLEVurbPlaceCardView.swift */,
-				B5ACA6E61BC5F5C9008EA328 /* UIImage+AverageColor.h */,
-				B5ACA6E71BC5F5C9008EA328 /* UIImage+AverageColor.m */,
-				B5AD178F1BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift */,
-				B5AD17911BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift */,
-				B5AD17931BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift */,
-				B5AD17991BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift */,
-				B5AD17951BC7201100C8B2C3 /* MLEVurbSimpleNetworkManager.swift */,
-				B5AD17971BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift */,
+				B5AD179F1BC72BF800C8B2C3 /* Models */,
+				B5AD179D1BC72BD000C8B2C3 /* AccessoryViews */,
+				B5AD179C1BC72BBC00C8B2C3 /* CardViews */,
+				B5AD179B1BC72BA300C8B2C3 /* Protocols */,
+				B5AD17A01BC72C0200C8B2C3 /* Utilities */,
+				B5AD17A11BC72C0800C8B2C3 /* Factories */,
+				B5AD17A21BC72C0D00C8B2C3 /* Managers */,
 			);
 			path = VurbTakeHome;
 			sourceTree = "<group>";
@@ -183,6 +165,79 @@
 				B59FFCBD1BC4AEB200AC671A /* Info.plist */,
 			);
 			path = VurbTakeHomeUITests;
+			sourceTree = "<group>";
+		};
+		B5AD179B1BC72BA300C8B2C3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */,
+				B5AD178F1BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift */,
+				B5AD17911BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift */,
+				B5AD17931BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		B5AD179C1BC72BBC00C8B2C3 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */,
+				B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */,
+				B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */,
+				B5ACA6E01BC5C56A008EA328 /* MLEVurbPlaceCardView.swift */,
+			);
+			name = CardViews;
+			sourceTree = "<group>";
+		};
+		B5AD179D1BC72BD000C8B2C3 /* AccessoryViews */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */,
+			);
+			name = AccessoryViews;
+			sourceTree = "<group>";
+		};
+		B5AD179E1BC72BE300C8B2C3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA6CE1BC589A5008EA328 /* MLEVurbTableViewCell.swift */,
+				B59FFCC61BC4AF4000AC671A /* MLEVurbTableViewController.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		B5AD179F1BC72BF800C8B2C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54856D81BC4E1E600AB5450 /* CardData.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B5AD17A01BC72C0200C8B2C3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA6E61BC5F5C9008EA328 /* UIImage+AverageColor.h */,
+				B5ACA6E71BC5F5C9008EA328 /* UIImage+AverageColor.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		B5AD17A11BC72C0800C8B2C3 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B5AD17991BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		B5AD17A21BC72C0D00C8B2C3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B5AD17951BC7201100C8B2C3 /* MLEVurbSimpleNetworkManager.swift */,
+				B5AD17971BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,15 +401,12 @@
 				B5ACA6D31BC599D4008EA328 /* MLEVurbCardView.swift in Sources */,
 				B5AD179A1BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift in Sources */,
 				B5AD17921BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift in Sources */,
-				B59FFCC91BC4B41700AC671A /* MLEVurbNetworkingManager.swift in Sources */,
 				B5ACA6CF1BC589A5008EA328 /* MLEVurbTableViewCell.swift in Sources */,
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
 				B5ACA6D91BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift in Sources */,
 				B5ACA6E31BC5C804008EA328 /* Toucan.swift in Sources */,
 				B5AD17941BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift in Sources */,
-				B5ACA6CD1BC58434008EA328 /* MLEVurbCardDataManager.swift in Sources */,
 				B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */,
-				B5ACA6D11BC599A2008EA328 /* MLEVurbCardViewFactory.swift in Sources */,
 				B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */,
 				B5AD17981BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift in Sources */,
 			);
