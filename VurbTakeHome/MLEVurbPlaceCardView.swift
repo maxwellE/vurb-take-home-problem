@@ -20,12 +20,12 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
     
     override func thumbnailImageDidCompleteDownload(downloadedImage: UIImage?, error: NSError?, imageCacheType: SDImageCacheType, imageURL: NSURL) {
         let operationQueue = NSOperationQueue()
-        let averageImageColorOperation = NSBlockOperation { () -> Void in
-            if let _ = self.cardData?.averageImageColor {
+        let averageImageColorOperation = NSBlockOperation { [weak self] () -> Void in
+            if let _ = self?.cardData?.averageImageColor {
                 return
             }
             if let thumbnailImage = downloadedImage {
-                self.cardData?.averageImageColor = thumbnailImage.averageColor()
+                self?.cardData?.averageImageColor = thumbnailImage.averageColor()
             }
         }
         let cropOperation = NSBlockOperation { [weak self] () -> Void in
@@ -36,18 +36,26 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
                 self?.cardData!.croppedImage = Toucan(image: thumbnailImage).resize(thumbnailImage.size, fitMode: Toucan.Resize.FitMode.Crop).image
             }
         }
-        cropOperation.addDependency(averageImageColorOperation)
-        operationQueue.addOperation(averageImageColorOperation)
-        operationQueue.addOperation(cropOperation)
-        cropOperation.completionBlock = ({ [weak self] () -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self?.thumbnailImageView?.clipsToBounds = true
-                self?.thumbnailImageView?.contentMode = UIViewContentMode.Center
-                self?.thumbnailImageView?.image = self?.cardData!.croppedImage
-                if let averageColorBackgroundColor = self?.cardData?.averageImageColor {
-                    self?.backgroundColor = averageColorBackgroundColor
+        let completionOperation = NSBlockOperation { [weak self] () -> Void in
+            self?.imageOperationsCompleteBlock()
+        }
+        completionOperation.addDependency(averageImageColorOperation)
+        completionOperation.addDependency(cropOperation)
+        operationQueue.addOperations([averageImageColorOperation, cropOperation, completionOperation], waitUntilFinished: false)
+    }
+    
+    func imageOperationsCompleteBlock() {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            if let averageColorBackgroundColor = self.cardData?.averageImageColor {
+                if let croppedImage = self.cardData?.croppedImage {
+                    if self.backgroundColor != averageColorBackgroundColor {
+                        self.backgroundColor = averageColorBackgroundColor
+                    }
+                    if self.thumbnailImageView?.image != averageColorBackgroundColor {
+                        self.thumbnailImageView?.image = croppedImage
+                    }
                 }
-            })
+            }
         })
     }
 }
