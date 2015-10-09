@@ -9,7 +9,7 @@
 import Foundation
 import AFNetworking
 
-class MLEVurbSimpleNetworkManager: MLEVurbNetworkingProtocol {
+class MLEVurbSimpleNetworkManager {
     var cardDataUrlString : String = "https://gist.githubusercontent.com/helloandrewpark/0a407d7c681b833d6b49/raw/5f3936dd524d32ed03953f616e19740bba920bcd/gistfile1.json"
     var sessionManager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
     var dataManager : MLEVurbCardDataProtocol?

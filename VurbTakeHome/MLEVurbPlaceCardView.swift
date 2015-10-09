@@ -21,10 +21,10 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
     override func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
         let operationQueue = NSOperationQueue()
         let downloadImageOperation = NSBlockOperation { [weak self] () -> Void in
-            if let _ = self?.cardData?.croppedImage {
+            if (self?.cardData?.croppedImage != nil) {
                 return
             }
-            if let _ = self?.cardData?.imageToBeCropped {
+            if (self?.cardData?.imageToBeCropped != nil) {
                 return
             }
             if let imageData = NSData(contentsOfURL: (self?.thumbnailImageURL())!) {
@@ -32,7 +32,7 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
             }
         }
         let averageImageColorOperation = NSBlockOperation { [weak self] () -> Void in
-            if let _ = self?.cardData?.averageImageColor {
+            if (self?.cardData?.averageImageColor != nil) {
                 return
             }
             if let thumbnailImage = self?.cardData?.imageToBeCropped {
@@ -40,7 +40,7 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
             }
         }
         let cropOperation = NSBlockOperation { [weak self] () -> Void in
-            if let _ = self?.cardData!.croppedImage {
+            if (self?.cardData!.croppedImage != nil) {
                 return
             }
             if let thumbnailImage = self?.cardData?.imageToBeCropped {
@@ -50,6 +50,7 @@ class MLEVurbPlaceCardView: MLEVurbCardView {
                 }
             }
         }
+        // More comments
         let completionOperation = NSBlockOperation { [weak self] () -> Void in
             self?.cardData?.imageToBeCropped = nil
             self?.imageOperationsCompleteBlock()

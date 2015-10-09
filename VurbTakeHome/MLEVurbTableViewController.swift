@@ -8,12 +8,12 @@
 
 import UIKit
 
+// Better name
 class MLEVurbTableViewController: UITableViewController {
     static let reuseIdentifier = "CardCell"
     var cardDataArray : Array<String> = Array<String>()
     var networkingManager : MLEVurbNetworkingProtocol?
     var cardDataManager : MLEVurbCardDataProtocol?
-    var cardViewFactory : MLEVurbCardViewFactoryProtocol?
     
     // MARK: Initializers
     
@@ -39,7 +39,7 @@ class MLEVurbTableViewController: UITableViewController {
         self.commonInit()
         self.networkingManager = networkingManger
         self.cardDataManager = cardDataManager
-        self.cardViewFactory = cardViewFactory
+       // self.cardViewFactory = cardViewFactory
     }
     
     // MARK: viewDid* viewWill* methods (View lifecycle)
@@ -79,5 +79,10 @@ class MLEVurbTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 140.0
+    }
+    
+    deinit {
+        self.cardDataManager = nil
+        self.networkingManager = nil
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 protocol MLEVurbCardContainerViewProtocol {
     weak var cardView: MLEVurbCardView? { get set }
     
+    // Preimplement
     func removeCardView() -> Void
     
     func addCardView(cardView: MLEVurbCardView) -> Void

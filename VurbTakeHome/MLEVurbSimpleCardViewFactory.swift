@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MLEVurbSimpleCardViewFactory: MLEVurbCardViewFactoryProtocol {
-    func generateCardView(cardData: CardData) -> MLEVurbCardView {
+class MLEVurbSimpleCardViewFactory {
+    class func generateCardView(cardData: CardData) -> MLEVurbCardView {
         switch cardData.type {
         case .Movie:
             return MLEVurbMovieCardView(cardData: cardData)

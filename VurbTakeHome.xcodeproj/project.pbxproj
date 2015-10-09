@@ -27,7 +27,6 @@
 		B5ACA6E81BC5F5C9008EA328 /* UIImage+AverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6E71BC5F5C9008EA328 /* UIImage+AverageColor.m */; settings = {ASSET_TAGS = (); }; };
 		B5AD17901BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD178F1BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		B5AD17921BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD17911BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift */; settings = {ASSET_TAGS = (); }; };
-		B5AD17941BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD17931BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		B5AD17961BC7201100C8B2C3 /* MLEVurbSimpleNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD17951BC7201100C8B2C3 /* MLEVurbSimpleNetworkManager.swift */; settings = {ASSET_TAGS = (); }; };
 		B5AD17981BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD17971BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		B5AD179A1BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD17991BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift */; settings = {ASSET_TAGS = (); }; };
@@ -71,7 +70,6 @@
 		B5ACA6E71BC5F5C9008EA328 /* UIImage+AverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AverageColor.m"; sourceTree = "<group>"; };
 		B5AD178F1BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbNetworkingProtocol.swift; sourceTree = "<group>"; };
 		B5AD17911BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardDataProtocol.swift; sourceTree = "<group>"; };
-		B5AD17931BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardViewFactoryProtocol.swift; sourceTree = "<group>"; };
 		B5AD17951BC7201100C8B2C3 /* MLEVurbSimpleNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbSimpleNetworkManager.swift; sourceTree = "<group>"; };
 		B5AD17971BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbSimpleCardDataManager.swift; sourceTree = "<group>"; };
 		B5AD17991BC7268F00C8B2C3 /* MLEVurbSimpleCardViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbSimpleCardViewFactory.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				B5ACA6D81BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift */,
 				B5AD178F1BC70E8700C8B2C3 /* MLEVurbNetworkingProtocol.swift */,
 				B5AD17911BC70FC000C8B2C3 /* MLEVurbCardDataProtocol.swift */,
-				B5AD17931BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -405,7 +402,6 @@
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
 				B5ACA6D91BC5A915008EA328 /* MLEVurbCardContainerViewProtocol.swift in Sources */,
 				B5ACA6E31BC5C804008EA328 /* Toucan.swift in Sources */,
-				B5AD17941BC71BC800C8B2C3 /* MLEVurbCardViewFactoryProtocol.swift in Sources */,
 				B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */,
 				B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */,
 				B5AD17981BC7244C00C8B2C3 /* MLEVurbSimpleCardDataManager.swift in Sources */,

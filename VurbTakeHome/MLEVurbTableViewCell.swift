@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Rename
 class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
     weak var cardView : MLEVurbCardView?
     
