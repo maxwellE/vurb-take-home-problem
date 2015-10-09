@@ -11,12 +11,7 @@
 import Foundation
 import UIKit
 
-enum CardType {
-    case Place
-    case Movie
-    case Music
-    case None
-}
+
 
 class CardData: NSObject {
     var type : CardType = CardType.None
@@ -25,10 +20,6 @@ class CardData: NSObject {
     var thumbnailImageURLString : String = ""
     var additionalData : Dictionary<String, String> = Dictionary<String, String>()
     let mandatoryCardInfoKeys = ["type", "title", "imageURL"]
-    // Places card data subclass
-    var croppedImage : UIImage?
-    var imageToBeCropped : UIImage?
-    var averageImageColor : UIColor?
     
     convenience init(cardInfo: NSDictionary) {
         self.init()
@@ -44,16 +35,15 @@ class CardData: NSObject {
     }
     
     func determineCardType(cardTypeString: String) {
-        self.type  = cardTypeString
-//        switch cardTypeString {
-//            case "place":
-//                self.type = CardType.Place
-//            case "movie":
-//                self.type = CardType.Movie
-//            case "music":
-//                self.type = CardType.Music
-//            default:
-//                self.type = CardType.None
-//        }
+        switch cardTypeString {
+            case "place":
+                self.type = CardType.Place
+            case "movie":
+                self.type = CardType.Movie
+            case "music":
+                self.type = CardType.Music
+            default:
+                self.type = CardType.None
+        }
     }
 }

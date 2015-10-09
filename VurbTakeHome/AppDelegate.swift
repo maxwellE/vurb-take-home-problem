@@ -16,10 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let cardDataManager = MLEVurbSimpleCardDataManager()
-        let networkingManager = MLEVurbSimpleNetworkManager(dataManager: cardDataManager)
-        let cardFactoryManager = MLEVurbSimpleCardViewFactory()
-        let rootViewController = MLEVurbTableViewController(networkingManger: networkingManager, cardDataManager: cardDataManager, cardViewFactory: cardFactoryManager)
+        let cardDataManager = MLEVurbCardDataManager()
+        let networkingManager = MLEVurbNetworkManager(dataManager: cardDataManager)
+        let rootViewController = MLEVurbCardListTableViewController(networkingManger: networkingManager, cardDataManager: cardDataManager)
         window?.rootViewController = rootViewController
         return true
     }

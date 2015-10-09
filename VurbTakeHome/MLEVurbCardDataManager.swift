@@ -1,5 +1,5 @@
 //
-//  MLEVurbSimpleCardDataManager.swift
+//  MLEVurbCardDataManager.swift
 //  VurbTakeHome
 //
 //  Created by Maxwell Elliott on 10/8/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MLEVurbSimpleCardDataManager: MLEVurbCardDataProtocol {
+class MLEVurbCardDataManager {
     var cardDataStore : Array<CardData> = Array<CardData>()
     
     func loadCardDataFromResponseData(responseData: NSData) {

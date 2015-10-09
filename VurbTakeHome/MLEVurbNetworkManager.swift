@@ -1,5 +1,5 @@
 //
-//  MLEVurbSimpleNetworkManager.swift
+//  MLEVurbNetworkManager.swift
 //  VurbTakeHome
 //
 //  Created by Maxwell Elliott on 10/8/15.
@@ -9,15 +9,15 @@
 import Foundation
 import AFNetworking
 
-class MLEVurbSimpleNetworkManager {
+class MLEVurbNetworkManager {
     var cardDataUrlString : String = "https://gist.githubusercontent.com/helloandrewpark/0a407d7c681b833d6b49/raw/5f3936dd524d32ed03953f616e19740bba920bcd/gistfile1.json"
     var sessionManager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
-    var dataManager : MLEVurbCardDataProtocol?
+    var dataManager : MLEVurbCardDataManager?
     
     init() {
     }
     
-    convenience init(dataManager: MLEVurbCardDataProtocol) {
+    convenience init(dataManager: MLEVurbCardDataManager) {
         self.init()
         self.dataManager = dataManager
     }

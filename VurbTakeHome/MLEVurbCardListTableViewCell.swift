@@ -1,5 +1,5 @@
 //
-//  MLEVurbTableViewCell.swift
+//  MLEVurbCardListTableViewCell.swift
 //  VurbTakeHome
 //
 //  Created by Maxwell Elliott on 10/7/15.
@@ -9,15 +9,14 @@
 import UIKit
 
 // Rename
-class MLEVurbTableViewCell: UITableViewCell, MLEVurbCardContainerViewProtocol {
+class MLEVurbCardListTableViewCell: UITableViewCell {
     weak var cardView : MLEVurbCardView?
     
     func commonInit() {
-        self.backgroundColor = UIColor(red:0.39, green:0.46, blue:0.86, alpha:1)
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: MLEVurbTableViewController.reuseIdentifier)
+        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: MLEVurbCardListTableViewController.reuseIdentifier)
         self.commonInit()
     }
 

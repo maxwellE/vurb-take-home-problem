@@ -1,5 +1,5 @@
 //
-//  MLEVurbSimpleCardViewFactory.swift
+//  MLEVurbCardViewFactory.swift
 //  VurbTakeHome
 //
 //  Created by Maxwell Elliott on 10/8/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MLEVurbSimpleCardViewFactory {
+class MLEVurbCardViewFactory {
     class func generateCardView(cardData: CardData) -> MLEVurbCardView {
         switch cardData.type {
         case .Movie:
