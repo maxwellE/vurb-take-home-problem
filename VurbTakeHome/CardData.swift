@@ -20,6 +20,7 @@ class CardData: NSObject {
     var thumbnailImageURLString : String = ""
     var additionalData : Dictionary<String, String> = Dictionary<String, String>()
     let mandatoryCardInfoKeys = ["type", "title", "imageURL"]
+    var thumbnailImageData : ThumbnailImageData = ThumbnailImageData()
     
     convenience init(cardInfo: NSDictionary) {
         self.init()

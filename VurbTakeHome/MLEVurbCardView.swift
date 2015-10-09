@@ -103,6 +103,27 @@ class MLEVurbCardView: UIView {
     }
     
     func setupThumbnailImageViewImageDownloader(thumbnailImageView: UIImageView) {
-        thumbnailImageView.sd_setImageWithURL(self.thumbnailImageURL())
+        let operationQueue = NSOperationQueue()
+        // Our first NSOperation downloads the image and saves it to the thumbnailImageData object for later operations
+        let downloadImageOperation = NSBlockOperation { [weak self] () -> Void in
+            // We already downloaded the image, just return
+            if (self?.cardData?.thumbnailImageData.image != nil) {
+                return
+            }
+            // Synchronously get the image data and save the image to thumbnailImageData
+            if let imageData = NSData(contentsOfURL: (self?.thumbnailImageURL())!) {
+                let thumbnailImage = UIImage(data: imageData)
+                self?.cardData?.thumbnailImageData.image = thumbnailImage
+            }
+        }
+        let setImageOnThumbnailImageViewOperation = NSBlockOperation { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), { [weak self] () -> Void in
+                self?.thumbnailImageView?.image = self?.cardData?.thumbnailImageData.image
+            })
+        }
+        // Cannot do the set image operation until the image is downloaded
+        setImageOnThumbnailImageViewOperation.addDependency(downloadImageOperation)
+        // Add operations to background queue
+        operationQueue.addOperations([downloadImageOperation, setImageOnThumbnailImageViewOperation], waitUntilFinished: false)
     }
 }

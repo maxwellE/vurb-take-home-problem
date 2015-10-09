@@ -10,7 +10,7 @@ import Foundation
 import AFNetworking
 
 class MLEVurbNetworkManager {
-    var cardDataUrlString : String = "https://gist.githubusercontent.com/helloandrewpark/0a407d7c681b833d6b49/raw/5f3936dd524d32ed03953f616e19740bba920bcd/gistfile1.json"
+    var cardDataUrlString : String = "https://gist.githubusercontent.com/maxwellE/d3ee6b4e02fdf937e7fe/raw/94125005c03413503009d31ad51993a8e4a67a98/vurbtakehome.json"
     var sessionManager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
     var dataManager : MLEVurbCardDataManager?
     

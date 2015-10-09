@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ThumbnailImageData: NSObject {
+    var image : UIImage?
     var croppedImage : UIImage?
-    var imageToBeCropped : UIImage?
     var averageImageColor : UIColor?
 }
