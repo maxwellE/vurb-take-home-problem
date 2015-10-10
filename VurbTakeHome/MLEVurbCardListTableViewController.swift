@@ -13,6 +13,7 @@ class MLEVurbCardListTableViewController: UITableViewController {
     var cardDataArray : Array<String> = Array<String>()
     var networkingManager : MLEVurbNetworkManager?
     var cardDataManager : MLEVurbCardDataManager?
+    weak var networkFetchErrorView : MLECardNetworkFetchFailureView?
     
     // MARK: Initializers
     
@@ -44,9 +45,19 @@ class MLEVurbCardListTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         self.networkingManager?.getCardData({ [weak self] () -> Void in
+            self?.networkFetchErrorView?.removeFromSuperview()
+            self?.networkFetchErrorView = nil
             self?.tableView.reloadData()
-            }, failureBlock: { (error) -> Void in
-                // HANDLE FAILURE
+            }, failureBlock: { [weak self] (error) -> Void in
+            let networkFetchErrorView = MLECardNetworkFetchFailureView(errorText: error!.localizedDescription)
+            networkFetchErrorView.backgroundColor = self?.tableView.backgroundColor
+                if let view = self?.view {
+                    view.addSubview(networkFetchErrorView)
+                    view.addConstraint(NSLayoutConstraint(item: networkFetchErrorView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
+                    view.addConstraint(NSLayoutConstraint(item: networkFetchErrorView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
+                    view.addConstraint(NSLayoutConstraint(item: networkFetchErrorView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+                    view.addConstraint(NSLayoutConstraint(item: networkFetchErrorView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+                }
         })
     }
     

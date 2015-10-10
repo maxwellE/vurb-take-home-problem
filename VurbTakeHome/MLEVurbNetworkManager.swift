@@ -10,8 +10,7 @@ import Foundation
 import AFNetworking
 
 class MLEVurbNetworkManager {
-    var cardDataUrlString : String = "https://gist.githubusercontent.com/maxwellE/d3ee6b4e02fdf937e7fe/raw/94125005c03413503009d31ad51993a8e4a67a98/vurbtakehome.json"
-    var sessionManager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
+    var cardDataUrlString : String = "https://gist.githubusercontent.com/helloandrewpark/0a407d7c681b833d6b49/raw/5f3936dd524d32ed03953f616e19740bba920bcd/gistfile1.js"
     var dataManager : MLEVurbCardDataManager?
     
     init() {
@@ -23,10 +22,13 @@ class MLEVurbNetworkManager {
     }
     
     func getCardData(successBlock: () -> Void, failureBlock: (error: NSError?) -> Void) {
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        sessionConfiguration.timeoutIntervalForRequest = 2
+        let sessionManager = AFHTTPSessionManager(sessionConfiguration: sessionConfiguration)
         let responseSerializer = AFHTTPResponseSerializer()
         responseSerializer.acceptableContentTypes = Set.init(arrayLiteral: "text/plain")
-        self.sessionManager.responseSerializer = responseSerializer
-        self.sessionManager.GET(cardDataUrlString, parameters: nil, success: { [weak self] (operation, responseData) -> Void in
+        sessionManager.responseSerializer = responseSerializer
+        sessionManager.GET(cardDataUrlString, parameters: nil, success: { [weak self] (operation, responseData) -> Void in
             self?.dataManager?.loadCardDataFromResponseData(responseData as! NSData)
             successBlock()
             }) { (operation, error) -> Void in

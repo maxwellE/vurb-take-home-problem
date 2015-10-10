@@ -53,9 +53,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-VurbTakeHome/AFNetworking.framework'
-  install_framework 'Pods-VurbTakeHome/SDWebImage.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-VurbTakeHome/AFNetworking.framework'
-  install_framework 'Pods-VurbTakeHome/SDWebImage.framework'
 fi

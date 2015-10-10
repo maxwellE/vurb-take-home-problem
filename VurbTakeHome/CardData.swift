@@ -11,8 +11,6 @@
 import Foundation
 import UIKit
 
-
-
 class CardData: NSObject {
     var type : CardType = CardType.None
     var typeString : String = ""

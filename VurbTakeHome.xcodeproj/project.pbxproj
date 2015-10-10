@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0ACDF1A14D14FA9474F82EC4 /* Pods_VurbTakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1813F12D2C0161F2722A3F3 /* Pods_VurbTakeHome.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B53FA6EC1BC88B3800EA70FF /* MLECardNetworkFetchFailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FA6EB1BC88B3800EA70FF /* MLECardNetworkFetchFailureView.swift */; settings = {ASSET_TAGS = (); }; };
 		B54856D91BC4E1E600AB5450 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54856D81BC4E1E600AB5450 /* CardData.swift */; settings = {ASSET_TAGS = (); }; };
 		B5660E601BC7789C00086DAA /* ThumbnailImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5660E5F1BC7789C00086DAA /* ThumbnailImageData.swift */; settings = {ASSET_TAGS = (); }; };
 		B5660E621BC778D400086DAA /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5660E611BC778D400086DAA /* CardType.swift */; settings = {ASSET_TAGS = (); }; };
@@ -19,7 +20,6 @@
 		B59FFCC71BC4AF4000AC671A /* MLEVurbCardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FFCC61BC4AF4000AC671A /* MLEVurbCardListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6CF1BC589A5008EA328 /* MLEVurbCardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6CE1BC589A5008EA328 /* MLEVurbCardListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6D31BC599D4008EA328 /* MLEVurbCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */; settings = {ASSET_TAGS = (); }; };
-		B5ACA6D51BC5A4B7008EA328 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6DB1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */; settings = {ASSET_TAGS = (); }; };
 		B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */; settings = {ASSET_TAGS = (); }; };
@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		2C3C2ACF662DC9BE237EB12F /* Pods-VurbTakeHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VurbTakeHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VurbTakeHome/Pods-VurbTakeHome.debug.xcconfig"; sourceTree = "<group>"; };
 		63CCFAB32157ADF0FF7E9DCD /* Pods-VurbTakeHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VurbTakeHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-VurbTakeHome/Pods-VurbTakeHome.release.xcconfig"; sourceTree = "<group>"; };
+		B53FA6EB1BC88B3800EA70FF /* MLECardNetworkFetchFailureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLECardNetworkFetchFailureView.swift; sourceTree = "<group>"; };
 		B54856D71BC4D4E200AB5450 /* VurbTakeHome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VurbTakeHome-Bridging-Header.h"; sourceTree = "<group>"; };
 		B54856D81BC4E1E600AB5450 /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		B5660E5F1BC7789C00086DAA /* ThumbnailImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailImageData.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		B59FFCC61BC4AF4000AC671A /* MLEVurbCardListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardListTableViewController.swift; sourceTree = "<group>"; };
 		B5ACA6CE1BC589A5008EA328 /* MLEVurbCardListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardListTableViewCell.swift; sourceTree = "<group>"; };
 		B5ACA6D21BC599D4008EA328 /* MLEVurbCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbCardView.swift; sourceTree = "<group>"; };
-		B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		B5ACA6DA1BC5BCE5008EA328 /* MLEVurbMovieCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbMovieCardView.swift; sourceTree = "<group>"; };
 		B5ACA6DC1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbMusicCardView.swift; sourceTree = "<group>"; };
 		B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLEVurbOpenMusicVideoButton.swift; sourceTree = "<group>"; };
@@ -80,7 +80,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ACDF1A14D14FA9474F82EC4 /* Pods_VurbTakeHome.framework in Frameworks */,
-				B5ACA6D51BC5A4B7008EA328 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				B5ACA6E21BC5C804008EA328 /* Toucan.swift */,
-				B5ACA6D41BC5A4B7008EA328 /* Reveal.framework */,
 				D1813F12D2C0161F2722A3F3 /* Pods_VurbTakeHome.framework */,
 			);
 			name = Frameworks;
@@ -177,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B5ACA6DE1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift */,
+				B53FA6EB1BC88B3800EA70FF /* MLECardNetworkFetchFailureView.swift */,
 			);
 			name = AccessoryViews;
 			sourceTree = "<group>";
@@ -389,6 +388,7 @@
 				B5AD179A1BC7268F00C8B2C3 /* MLEVurbCardViewFactory.swift in Sources */,
 				B5ACA6CF1BC589A5008EA328 /* MLEVurbCardListTableViewCell.swift in Sources */,
 				B59FFCA71BC4AEB200AC671A /* AppDelegate.swift in Sources */,
+				B53FA6EC1BC88B3800EA70FF /* MLECardNetworkFetchFailureView.swift in Sources */,
 				B5ACA6E31BC5C804008EA328 /* Toucan.swift in Sources */,
 				B5ACA6DF1BC5C07F008EA328 /* MLEVurbOpenMusicVideoButton.swift in Sources */,
 				B5ACA6DD1BC5BE6E008EA328 /* MLEVurbMusicCardView.swift in Sources */,
@@ -537,14 +537,6 @@
 					"\"CoreGraphics\"",
 					"-framework",
 					"\"QuartzCore\"",
-					"-framework",
-					"\"Reveal\"",
-					"-framework",
-					"\"SDWebImage\"",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MLE.com.VurbTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";

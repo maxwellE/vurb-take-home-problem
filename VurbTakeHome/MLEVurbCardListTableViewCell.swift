@@ -8,7 +8,6 @@
 
 import UIKit
 
-// Rename
 class MLEVurbCardListTableViewCell: UITableViewCell {
     weak var cardView : MLEVurbCardView?
     
@@ -34,7 +33,7 @@ class MLEVurbCardListTableViewCell: UITableViewCell {
         
     }
     
-    // MARK: MLEVurbCardContainerViewProtocol methods
+    // MARK: Card managment methods
     
     func addCardView(cardView: MLEVurbCardView) {
         self.addSubview(cardView)
